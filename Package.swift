@@ -201,7 +201,7 @@ let package = Package(
         .library(name: "AWSRoute53", targets: ["AWSRoute53"]),
         .library(name: "AWSRoute53Domains", targets: ["AWSRoute53Domains"]),
         .library(name: "AWSRoute53Resolver", targets: ["AWSRoute53Resolver"]),
-        .library(name: "AWSS3", targets: ["AWSS3"]),
+        .library(name: "AWSS3", type:.dynamic, targets: ["AWSS3"]),
         .library(name: "AWSS3Control", targets: ["AWSS3Control"]),
         .library(name: "AWSSES", targets: ["AWSSES"]),
         .library(name: "AWSSESV2", targets: ["AWSSESV2"]),
