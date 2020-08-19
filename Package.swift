@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.2
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the AWSSDKSwift open source project
@@ -28,14 +28,14 @@ let package = Package(
     targets: [
        .target(name: "AWSLambda", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/Lambda",
                 linkerSettings: [
-                                .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"])//,.when(platforms: [.android])),
+                                .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"],.when(platforms: [.android])),
                                  ]),
         
        .target(name: "AWSS3", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core"), "CAWSZlib"],
             path: "./Sources/AWSSDKSwift/",
             sources: ["Services/S3", "Extensions/S3"],
             linkerSettings: [
-                            .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"])//,.when(platforms: [.android])),
+                            .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
                              ]),
         
        .target(name: "AWSS3Control",
