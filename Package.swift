@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the AWSSDKSwift open source project
@@ -376,7 +376,11 @@ let package = Package(
 //        .target(name: "AWSKinesisVideoMedia", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/KinesisVideoMedia"),
 //        .target(name: "AWSKinesisVideoSignalingChannels", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/KinesisVideoSignalingChannels"),
 //        .target(name: "AWSLakeFormation", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/LakeFormation"),
-        .target(name: "AWSLambda", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Lambda"),
+        .target(name: "AWSLambda", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Lambda",
+                linkerSettings: [
+                                .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"],.when(platforms: [.android])),
+                                 ]
+),
 //        .target(name: "AWSLexModelBuildingService", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/LexModelBuildingService"),
 //        .target(name: "AWSLexRuntimeService", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/LexRuntimeService"),
 //        .target(name: "AWSLicenseManager", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/LicenseManager"),
@@ -432,7 +436,11 @@ let package = Package(
 //        .target(name: "AWSRoute53", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Route53"),
 //        .target(name: "AWSRoute53Domains", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Route53Domains"),
 //        .target(name: "AWSRoute53Resolver", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Route53Resolver"),
-        .target(name: "AWSS3", dependencies: ["AWSSDKSwiftCore", "CAWSZlib"], path: "./Sources/AWSSDKSwift/", sources: ["Services/S3", "Extensions/S3"]),
+        .target(name: "AWSS3", dependencies: ["AWSSDKSwiftCore", "CAWSZlib"], path: "./Sources/AWSSDKSwift/", sources: ["Services/S3", "Extensions/S3"],
+                linkerSettings: [
+                                .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
+                                 ]
+),
 //        .target(name: "AWSS3Control", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/", sources: ["Services/S3Control", "Extensions/S3Control"]),
 //        .target(name: "AWSSES", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/SES"),
 //        .target(name: "AWSSESV2", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/SESV2"),
