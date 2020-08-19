@@ -247,7 +247,7 @@ let package = Package(
 //        .library(name: "AWSXRay", type:.dynamic,targets: ["AWSXRay"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/brightenai/aws-sdk-swift-core.git", .branch("master")),
+        .package(name:"aws-sdk-swift-core", url: "https://github.com/brightenai/aws-sdk-swift-core.git", .branch("master")),
     ],
     targets: [
 //        .target(name: "AWSACM", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/ACM"),
@@ -376,7 +376,7 @@ let package = Package(
 //        .target(name: "AWSKinesisVideoMedia", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/KinesisVideoMedia"),
 //        .target(name: "AWSKinesisVideoSignalingChannels", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/KinesisVideoSignalingChannels"),
 //        .target(name: "AWSLakeFormation", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/LakeFormation"),
-        .target(name: "AWSLambda", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Lambda",
+        .target(name: "AWSLambda", dependencies: ["aws-sdk-swift-core"], path: "./Sources/AWSSDKSwift/Services/Lambda",
                 linkerSettings: [
                                 .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"],.when(platforms: [.android])),
                                  ]
@@ -436,7 +436,9 @@ let package = Package(
 //        .target(name: "AWSRoute53", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Route53"),
 //        .target(name: "AWSRoute53Domains", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Route53Domains"),
 //        .target(name: "AWSRoute53Resolver", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/Route53Resolver"),
-        .target(name: "AWSS3", dependencies: ["AWSSDKSwiftCore", "CAWSZlib"], path: "./Sources/AWSSDKSwift/", sources: ["Services/S3", "Extensions/S3"],
+        .target(name: "AWSS3", dependencies: ["aws-sdk-swift-core", "CAWSZlib"],
+                path: "./Sources/AWSSDKSwift/",
+                sources: ["Services/S3", "Extensions/S3"],
                 linkerSettings: [
                                 .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
                                  ]
