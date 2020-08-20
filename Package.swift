@@ -24,6 +24,7 @@ let package = Package(
    ],
     dependencies: [
         .package(name:"aws-sdk-swift-core", url: "https://github.com/brightenai/aws-sdk-swift-core.git", .branch("master")),
+        .package(url: "https://github.com/brightenai/swift-crypto.git", .branch("master"))
     ],
     targets: [
        .target(name: "AWSLambda", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/Lambda",
