@@ -17,7 +17,7 @@ import PackageDescription
 
 let package = Package(
     name: "aws-sdk-swift",
-    platforms: [.iOS(.v12), .tvOS(.v12), .watchOS(.v5)],
+    platforms: [.macOS(.v10_15),.iOS(.v12), .tvOS(.v12), .watchOS(.v5)],
     products: [
        .library(name: "AWSLambda", targets: ["AWSLambda"]),
         .library(name: "AWSS3", targets: ["AWSS3"]),
