@@ -27,7 +27,7 @@ let package = Package(
         .package(url: "https://github.com/brightenai/swift-crypto.git", .branch("master"))
     ],
     targets: [
-       .target(name: "AWSLambda", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/Lambda",
+       .target(name: "AWSLambda", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/Lambda"
 //                linkerSettings: [
 //                                .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"],.when(platforms: [.android])),
 //                                 ]
@@ -35,7 +35,7 @@ let package = Package(
         
        .target(name: "AWSS3", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core"), "CAWSZlib"],
             path: "./Sources/AWSSDKSwift/",
-            sources: ["Services/S3", "Extensions/S3"],
+            sources: ["Services/S3", "Extensions/S3"]
 //            linkerSettings: [
 //                            .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
 //                             ]
