@@ -28,16 +28,18 @@ let package = Package(
     ],
     targets: [
        .target(name: "AWSLambda", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/Lambda",
-                linkerSettings: [
-                                .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"],.when(platforms: [.android])),
-                                 ]),
+//                linkerSettings: [
+//                                .unsafeFlags([ "-Xlinker","-soname=libAWSLambda.so"],.when(platforms: [.android])),
+//                                 ]
+       ),
         
        .target(name: "AWSS3", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core"), "CAWSZlib"],
             path: "./Sources/AWSSDKSwift/",
             sources: ["Services/S3", "Extensions/S3"],
-            linkerSettings: [
-                            .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
-                             ]),
+//            linkerSettings: [
+//                            .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
+//                             ]
+       ),
         
        .target(name: "AWSS3Control",
                dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")],
