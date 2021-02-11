@@ -45,13 +45,14 @@ let package = Package(
         .target(name: "AWSSNS",
                 dependencies: ["AWSSDKSwiftCore"],
                 path: "./Sources/AWSSDKSwift/",
-                sources: ["Services/SNS"])
+                sources: ["Services/SNS"]),
 
 
        .target(name: "AWSS3Control",
                dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")],
                path: "./Sources/AWSSDKSwift/",
                sources: ["Services/S3Control", "Extensions/S3Control"]),
+        
         .target(name: "CAWSZlib", linkerSettings: [.linkedLibrary("z")]),
     ]
 )
