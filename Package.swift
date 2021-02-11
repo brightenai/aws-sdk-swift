@@ -43,7 +43,7 @@ let package = Package(
        ),
         
         .target(name: "AWSSNS",
-                dependencies: ["AWSSDKSwiftCore"],
+                dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")],
                 path: "./Sources/AWSSDKSwift/",
                 sources: ["Services/SNS"]),
 
