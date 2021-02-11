@@ -21,6 +21,7 @@ let package = Package(
     products: [
        .library(name: "AWSLambda", targets: ["AWSLambda"]),
         .library(name: "AWSS3", targets: ["AWSS3"]),
+        .library(name: "AWSSNS", targets: ["AWSSNS"]),
    ],
     dependencies: [
         .package(name:"aws-sdk-swift-core", url: "https://github.com/brightenai/aws-sdk-swift-core.git", .branch("master")),
@@ -41,6 +42,12 @@ let package = Package(
 //                             ]
        ),
         
+        .target(name: "AWSSNS",
+                dependencies: ["AWSSDKSwiftCore"],
+                path: "./Sources/AWSSDKSwift/",
+                sources: ["Services/SNS"])
+
+
        .target(name: "AWSS3Control",
                dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")],
                path: "./Sources/AWSSDKSwift/",
