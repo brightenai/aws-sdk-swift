@@ -19,9 +19,10 @@ let package = Package(
     name: "aws-sdk-swift",
     platforms: [.macOS(.v10_15),.iOS(.v12), .tvOS(.v12), .watchOS(.v5)],
     products: [
-       .library(name: "AWSLambda", targets: ["AWSLambda"]),
-        .library(name: "AWSS3", targets: ["AWSS3"]),
-        .library(name: "AWSSNS", targets: ["AWSSNS"]),
+       .library(name: "AWSLambda",type:.dynamic,
+                targets: ["AWSLambda"]),
+        .library(name: "AWSS3", type:.dynamic,targets: ["AWSS3"]),
+        .library(name: "AWSSNS",type:.dynamic, targets: ["AWSSNS"]),
    ],
     dependencies: [
         .package(name:"aws-sdk-swift-core", url: "https://github.com/brightenai/aws-sdk-swift-core.git", .branch("master")),
