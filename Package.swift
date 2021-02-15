@@ -37,10 +37,10 @@ let package = Package(
         
        .target(name: "AWSS3", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core"), "CAWSZlib"],
             path: "./Sources/AWSSDKSwift/",
-            sources: ["Services/S3", "Extensions/S3"]
-//            linkerSettings: [
-//                            .unsafeFlags([ "-Xlinker","-soname=libAWSS3.so"],.when(platforms: [.android])),
-//                             ]
+            sources: ["Services/S3", "Extensions/S3"],
+            linkerSettings: [
+                .unsafeFlags([ "-Xlinker","-S"])
+                             ]
        ),
         
         .target(name: "AWSSNS",
