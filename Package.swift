@@ -59,9 +59,9 @@ let package = Package(
         
         .target(name: "CAWSZlib", linkerSettings: [.linkedLibrary("z")]),
         
-        .target(name: "AWSSTS", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/STS"),
-        .target(name: "AWSRDS", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/RDS"),
-        .target(name: "AWSRDSDataService", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/RDSDataService"),
+        .target(name: "AWSSTS", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/STS"),
+        .target(name: "AWSRDS", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/RDS"),
+        .target(name: "AWSRDSDataService", dependencies: [.product(name: "AWSSDKSwiftCore", package: "aws-sdk-swift-core")], path: "./Sources/AWSSDKSwift/Services/RDSDataService"),
 
     ]
 )
