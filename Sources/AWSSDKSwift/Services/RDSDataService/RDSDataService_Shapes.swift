@@ -96,11 +96,11 @@ extension RDSDataService {
         public func validate(name: String) throws {
             try validate(self.database, name: "database", parent: name, max: 64)
             try validate(self.database, name: "database", parent: name, min: 0)
-            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 100)
+            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 2048)
             try validate(self.resourceArn, name: "resourceArn", parent: name, min: 11)
             try validate(self.schema, name: "schema", parent: name, max: 64)
             try validate(self.schema, name: "schema", parent: name, min: 0)
-            try validate(self.secretArn, name: "secretArn", parent: name, max: 100)
+            try validate(self.secretArn, name: "secretArn", parent: name, max: 2048)
             try validate(self.secretArn, name: "secretArn", parent: name, min: 11)
             try validate(self.sql, name: "sql", parent: name, max: 65536)
             try validate(self.sql, name: "sql", parent: name, min: 0)
@@ -154,11 +154,11 @@ extension RDSDataService {
         public func validate(name: String) throws {
             try validate(self.database, name: "database", parent: name, max: 64)
             try validate(self.database, name: "database", parent: name, min: 0)
-            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 100)
+            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 2048)
             try validate(self.resourceArn, name: "resourceArn", parent: name, min: 11)
             try validate(self.schema, name: "schema", parent: name, max: 64)
             try validate(self.schema, name: "schema", parent: name, min: 0)
-            try validate(self.secretArn, name: "secretArn", parent: name, max: 100)
+            try validate(self.secretArn, name: "secretArn", parent: name, max: 2048)
             try validate(self.secretArn, name: "secretArn", parent: name, min: 11)
         }
 
@@ -266,9 +266,9 @@ extension RDSDataService {
         }
 
         public func validate(name: String) throws {
-            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 100)
+            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 2048)
             try validate(self.resourceArn, name: "resourceArn", parent: name, min: 11)
-            try validate(self.secretArn, name: "secretArn", parent: name, max: 100)
+            try validate(self.secretArn, name: "secretArn", parent: name, max: 2048)
             try validate(self.secretArn, name: "secretArn", parent: name, min: 11)
             try validate(self.transactionId, name: "transactionId", parent: name, max: 192)
             try validate(self.transactionId, name: "transactionId", parent: name, min: 0)
@@ -317,11 +317,11 @@ extension RDSDataService {
         }
 
         public func validate(name: String) throws {
-            try validate(self.awsSecretStoreArn, name: "awsSecretStoreArn", parent: name, max: 100)
+            try validate(self.awsSecretStoreArn, name: "awsSecretStoreArn", parent: name, max: 2048)
             try validate(self.awsSecretStoreArn, name: "awsSecretStoreArn", parent: name, min: 11)
             try validate(self.database, name: "database", parent: name, max: 64)
             try validate(self.database, name: "database", parent: name, min: 0)
-            try validate(self.dbClusterOrInstanceArn, name: "dbClusterOrInstanceArn", parent: name, max: 100)
+            try validate(self.dbClusterOrInstanceArn, name: "dbClusterOrInstanceArn", parent: name, max: 2048)
             try validate(self.dbClusterOrInstanceArn, name: "dbClusterOrInstanceArn", parent: name, min: 11)
             try validate(self.schema, name: "schema", parent: name, max: 64)
             try validate(self.schema, name: "schema", parent: name, min: 0)
@@ -391,11 +391,11 @@ extension RDSDataService {
         public func validate(name: String) throws {
             try validate(self.database, name: "database", parent: name, max: 64)
             try validate(self.database, name: "database", parent: name, min: 0)
-            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 100)
+            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 2048)
             try validate(self.resourceArn, name: "resourceArn", parent: name, min: 11)
             try validate(self.schema, name: "schema", parent: name, max: 64)
             try validate(self.schema, name: "schema", parent: name, min: 0)
-            try validate(self.secretArn, name: "secretArn", parent: name, max: 100)
+            try validate(self.secretArn, name: "secretArn", parent: name, max: 2048)
             try validate(self.secretArn, name: "secretArn", parent: name, min: 11)
             try validate(self.sql, name: "sql", parent: name, max: 65536)
             try validate(self.sql, name: "sql", parent: name, min: 0)
@@ -561,9 +561,9 @@ extension RDSDataService {
         }
 
         public func validate(name: String) throws {
-            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 100)
+            try validate(self.resourceArn, name: "resourceArn", parent: name, max: 2048)
             try validate(self.resourceArn, name: "resourceArn", parent: name, min: 11)
-            try validate(self.secretArn, name: "secretArn", parent: name, max: 100)
+            try validate(self.secretArn, name: "secretArn", parent: name, max: 2048)
             try validate(self.secretArn, name: "secretArn", parent: name, min: 11)
             try validate(self.transactionId, name: "transactionId", parent: name, max: 192)
             try validate(self.transactionId, name: "transactionId", parent: name, min: 0)

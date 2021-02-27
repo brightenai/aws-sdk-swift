@@ -23,6 +23,9 @@ let package = Package(
                 targets: ["AWSLambda"]),
         .library(name: "AWSS3",targets: ["AWSS3"]),
         .library(name: "AWSSNS", targets: ["AWSSNS"]),
+        .library(name: "AWSRDS", targets: ["AWSRDS"]),
+        .library(name: "AWSSTS", targets: ["AWSSTS"]),
+        .library(name: "AWSRDSDataService", targets: ["AWSRDSDataService"]),
    ],
     dependencies: [
         .package(name:"aws-sdk-swift-core", url: "https://github.com/brightenai/aws-sdk-swift-core.git", .branch("master")),
@@ -55,5 +58,10 @@ let package = Package(
                sources: ["Services/S3Control", "Extensions/S3Control"]),
         
         .target(name: "CAWSZlib", linkerSettings: [.linkedLibrary("z")]),
+        
+        .target(name: "AWSSTS", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/STS"),
+        .target(name: "AWSRDS", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/RDS"),
+        .target(name: "AWSRDSDataService", dependencies: ["AWSSDKSwiftCore"], path: "./Sources/AWSSDKSwift/Services/RDSDataService"),
+
     ]
 )
