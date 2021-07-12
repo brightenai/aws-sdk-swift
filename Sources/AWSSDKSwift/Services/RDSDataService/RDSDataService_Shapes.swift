@@ -357,7 +357,7 @@ extension RDSDataService {
         /// A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.  For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures. 
         public let continueAfterTimeout: Bool?
         /// The name of the database.
-        public let database: String?
+public let database: String?
         /// A value that indicates whether to include metadata in the results.
         public let includeResultMetadata: Bool?
         /// The parameters for the SQL statement.  Array parameters are not supported. 
